@@ -15,5 +15,12 @@ import java.util.List;
 @Transactional
 @RepositoryRestResource
 public interface ProductRepository extends JpaRepository<Product,Long> {
-
+    @RestResource(path = "/selectedProducts")
+    public List<Product> findBySelectedIsTrue();
+    @RestResource(path = "/productsByKeyword")
+    public List<Product> findByTitleContains(@Param("mc") String mc);
+    @RestResource(path = "/promoProducts")
+    public List<Product> findByPromotionIsTrue();
+    @RestResource(path = "/availableProducts")
+    public List<Product> findByAvailableIsTrue();
 }

@@ -32,4 +32,9 @@ public class Product implements Serializable {
     @JsonBackReference
     @OneToMany(mappedBy = "product")
     Collection<OrderItem> orderItems = new ArrayList<>();
+
+    private String defaultImage="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg";
+    @OneToMany(mappedBy = "product")
+    private Collection<ProductImage> images = new ArrayList<>();
+
 }
