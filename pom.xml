@@ -64,6 +64,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.cybersource/cybersource-rest-client-java -->
+        <dependency>
+            <groupId>com.cybersource</groupId>
+            <artifactId>cybersource-rest-client-java</artifactId>
+            <version>0.0.72</version>
+        </dependency>
 
         <!-- Apache Commons IO pour FilenameUtils -->
         <dependency>
