@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -18,17 +19,28 @@ import java.util.Date;
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Table(name = "orders")
-public class Order implements Serializable {
+public class Order {
+    //public class Order implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private Date date;
-    private String orderNumber;
-    private double mountTotal;
-    @JsonBackReference
-    @OneToMany(mappedBy = "order")
-    private Collection<OrderItem> orderItems = new ArrayList<>();
-    @ManyToOne
-    private Client client;
-    @OneToOne
-    private Payment payment;
+    // Avant cybersource
+    //private Date date;
+    //private String orderNumber;
+    //private double mountTotal;
+    //@JsonBackReference
+    //@OneToMany(mappedBy = "order")
+    //private Collection<OrderItem> orderItems = new ArrayList<>();
+    //@ManyToOne
+    //private Client client;
+    //@OneToOne
+    //private Payment payment;
+    private Long amountCents;
+
+    private String currency = "XOF";
+
+    private String status; // PENDING, AUTHORIZED, CAPTURED, DECLINED, FAILED
+
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    private LocalDateTime updatedAt = LocalDateTime.now();
 }

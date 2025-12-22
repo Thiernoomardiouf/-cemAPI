@@ -53,7 +53,7 @@ public class OrderItemRestController {
                 total += orderProductModel.getQuantity() * product.getPrice();
             }
             // on met a jour le montant total de la commande
-            order.setMountTotal(total);
+           // order.setMountTotal(total);
 
             return orderService.editOrder(order, order.getId());
         }

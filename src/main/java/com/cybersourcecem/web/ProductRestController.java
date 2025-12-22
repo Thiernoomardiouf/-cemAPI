@@ -35,7 +35,7 @@ public class ProductRestController {
     }
 
     @GetMapping("/products")
-    List<Product> findAll() {
+    List<Product> findAllProduct() {
         return this.productService.findAll();
     }
 

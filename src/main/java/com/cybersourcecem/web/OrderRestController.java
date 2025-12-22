@@ -22,11 +22,11 @@ public class OrderRestController {
     @PostMapping("/orders")
     void saveOrder(@RequestBody OrderModel orderModel){
         Order order = new Order();
-        order.setClient(personService.findOneClientById(orderModel.getClientId()));
-        order.setDate(new Date());
-        order.setOrderNumber(orderModel.getOrderNumber());
-        order.setPayment(null);
-        order.setMountTotal(0);
+      //  order.setClient(personService.findOneClientById(orderModel.getClientId()));
+      //  order.setDate(new Date());
+      //  order.setOrderNumber(orderModel.getOrderNumber());
+      //  order.setPayment(null);
+      //  order.setMountTotal(0);
         orderService.createOrder(order);
     }
     @GetMapping("/orders")

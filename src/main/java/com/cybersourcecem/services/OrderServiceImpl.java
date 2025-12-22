@@ -25,8 +25,8 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order editOrder(Order order, long id) {
         Order  o = this.repository.getReferenceById(id);
-        o.setMountTotal(order.getMountTotal());
-        o.setPayment(order.getPayment());
+     //   o.setMountTotal(order.getMountTotal());
+     //   o.setPayment(order.getPayment());
         this.repository.save(o);
         return  o;
     }
